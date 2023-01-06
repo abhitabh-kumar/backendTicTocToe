@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from "uuid"
 import bcrypt from "bcrypt"
 import { StreamChat } from "stream-chat";
 
+const hostname='0.0.0'
+const port=3001;
 
 const app = express()
 
@@ -14,6 +16,10 @@ const api_key = "336t9wsg48yy";
 const api_screte = "9ec72tm23e6e89pw6m8mkfgqm2y7wydm8nw3egtarhc6qt8apd2npkqtaf22xp9s";
 
 const serverClient = StreamChat.getInstance(api_key, api_screte);
+
+app.get("/",(req,res)=>{
+    res.send("heellow");
+})
 
 app.post("/signUp", async (req, res) => {
     try {
@@ -81,6 +87,6 @@ app.post("/login", async (req, res) => {
     }
 })
 
-app.listen(3001, () => {
+app.listen(port,hostname, () => {
     console.log("server is connected");
 })
