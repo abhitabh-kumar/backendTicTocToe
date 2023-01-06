@@ -8,6 +8,7 @@ const hostname='0.0.0'
 const port=3001;
 
 const app = express()
+app.use(express.static(__dirname+'../server'))
 
 app.use(cors());
 app.use(express.json());
