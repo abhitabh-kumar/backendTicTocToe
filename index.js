@@ -91,3 +91,5 @@ app.post("/login", async (req, res) => {
 app.listen(port,hostname, () => {
     console.log("server is connected");
 })
+
+module.exports = app;
